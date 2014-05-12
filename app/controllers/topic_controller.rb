@@ -3,6 +3,7 @@ class TopicController < ApplicationController
 	# GET /topics
 	# make Topic#index root path
 	def index
+		@topic = Topic.all
 	end
 
 	# GET /topics

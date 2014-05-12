@@ -2,24 +2,11 @@ require 'spec_helper'
 
 describe TopicController do
 
-  describe "GET 'new'" do
-    it "returns http success" do
-      get 'new'
-      response.should be_success
-    end
-  end
-
-  describe "GET 'create'" do
-    it "returns http success" do
-      get 'create'
-      response.should be_success
-    end
-  end
-
-  describe "GET 'delete'" do
-    it "returns http success" do
-      get 'delete'
-      response.should be_success
+  describe "GET #index" do 
+    it "sends an array of topics" do 
+      topic = create(:topic)
+      get :index
+      assigns(:topic).should eq([topic])
     end
   end
 

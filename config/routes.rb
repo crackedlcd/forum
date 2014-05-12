@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   get 'post/delete'
 
+  get 'topic/index'
+
   get 'topic/new'
 
   get 'topic/create'
