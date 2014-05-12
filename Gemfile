@@ -27,6 +27,7 @@ end
 
 group :development do 
 	gem 'rails_layout'
+	gem 'better_errors'
 end
 
 group :test do 
