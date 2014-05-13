@@ -8,6 +8,8 @@ class TopicController < ApplicationController
 
 	# GET /topics
   def new
+  	@topic = Topic.new
+    @post = Post.new
   end
 
   # POST /topics
@@ -24,7 +26,8 @@ class TopicController < ApplicationController
   		@topic = Topic.find(params[:id])
   	end
 
-  	def contact_params
-  		params.require(:topic).permit(:title)
+  	def topic_params
+  		params.require(:topic).permit(:title,
+        :post_attributes => [:id, :content])
   	end
 end

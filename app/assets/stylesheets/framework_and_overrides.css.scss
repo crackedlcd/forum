@@ -26,6 +26,7 @@ img {
   }
 .form {
   @extend .col-md-6;
+  width: 100%;
   }
 .form-centered {
   @extend .col-md-6;

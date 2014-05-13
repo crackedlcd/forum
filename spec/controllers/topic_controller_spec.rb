@@ -10,4 +10,11 @@ describe TopicController do
     end
   end
 
+  describe "POST #create" do
+    it "creates a new topic" do
+      @user = create(:user)
+
+      sign_in user
+      
+
 end

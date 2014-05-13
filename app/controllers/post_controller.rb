@@ -2,6 +2,7 @@ class PostController < ApplicationController
 
 	# GET
   def new
+    @post = Post.new
   end
 
   # POST
