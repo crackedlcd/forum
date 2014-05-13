@@ -1,17 +1,4 @@
 Rails.application.routes.draw do
-  get 'post/new'
-
-  get 'post/create'
-
-  get 'post/delete'
-
-  get 'topic/index'
-
-  get 'topic/new'
-
-  get 'topic/create'
-
-  get 'topic/delete'
 
   devise_for :users
   resource :topics do

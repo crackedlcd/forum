@@ -1,4 +1,4 @@
-class PostController < ApplicationController
+class PostsController < ApplicationController
 
 	# GET
   def new

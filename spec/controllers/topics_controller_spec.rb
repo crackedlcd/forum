@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe TopicController do
+describe TopicsController do
 
   describe "GET #index" do 
     it "sends an array of topics" do 

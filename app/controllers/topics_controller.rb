@@ -1,4 +1,4 @@
-class TopicController < ApplicationController
+class TopicsController < ApplicationController
 
 	# GET /topics
 	# make Topic#index root path

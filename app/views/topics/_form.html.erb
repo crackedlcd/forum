@@ -14,8 +14,12 @@
 		<%= f.label :title %>
 		<%= f.text_field :title, class: "form-control form", placeholder: "Enter Topic Title" %>
 	</div>
-	<%= fields_for :post, @post do |p| %>
-		<%= p.label :content %>
-		<%= p.text_area :content, class: "form-control", rows: "5" %>
+	<div class="form-group">
+		<%= fields_for :post, @post do |p| %>
+			<%= p.label :content %>
+			<%= p.text_area :content, class: "form-control", rows: "5" %>
 		<% end %>
+	</div>
+
+	<%= f.submit "Create Topic", class: "btn btn-large" %>
 <% end %>

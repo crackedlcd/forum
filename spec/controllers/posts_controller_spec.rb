@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe PostController do
+describe PostsController do
 
   describe "GET 'new'" do
     it "returns http success" do
