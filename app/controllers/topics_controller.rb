@@ -3,13 +3,18 @@ class TopicsController < ApplicationController
 	# GET /topics
 	# make Topics#index root path
 	def index
-		@topic = Topic.all
+		@topics = Topic.all
 	end
 
 	# GET /topics
   def new
   	@topic = Topic.new
     @post = Post.new
+  end
+
+  # GET /topic/:id
+  def show
+    @topic = Topic.find(params[:id])
   end
 
   # POST /topics
