@@ -1,7 +1,7 @@
 class TopicsController < ApplicationController
 
 	# GET /topics
-	# make Topic#index root path
+	# make Topics#index root path
 	def index
 		@topic = Topic.all
 	end
@@ -14,6 +14,22 @@ class TopicsController < ApplicationController
 
   # POST /topics
   def create
+    @topic = Topic.new(title: params[:topic][:title], user_id: current_user.id)
+    current_user.topics.build(topic_params)
+
+    if @topic.save
+      @post = Post.new(content: params[:post][:content], topic_id: @topic.id, user_id: current_user.id)
+      if @post.save
+        flash[:success] = "Topic successfully created."
+        redirect_to topics_url
+      else
+        flash[:error] = "Something went wrong creating a post"
+        redirect_to new_topics_path
+      end
+    else
+      flash[:error] = "Something went wrong creating a topic"
+      redirect_to new_topics_path
+    end
   end
 
   # DELETE /topic/:id
@@ -28,6 +44,6 @@ class TopicsController < ApplicationController
 
   	def topic_params
   		params.require(:topic).permit(:title,
-        :post_attributes => [:id, :content])
+        :post => [:id, :content])
   	end
 end

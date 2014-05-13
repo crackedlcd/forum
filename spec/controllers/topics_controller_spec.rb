@@ -2,19 +2,24 @@ require 'spec_helper'
 
 describe TopicsController do
 
+  let(:user) { FactoryGirl.create(:user) }
+  let(:topic) { FactoryGirl.create(:topic).attributes }
+
   describe "GET #index" do 
     it "sends an array of topics" do 
-      topic = create(:topic)
       get :index
-      assigns(:topic).should eq([topic])
+      expect(assigns(:topics)).to eq([topic])
     end
   end
 
   describe "POST #create" do
-    it "creates a new topic" do
-      @user = create(:user)
 
-      sign_in user
-      
+
+    context 'success' do 
+      before { post :create, :topic => :topic}
+      it { should set_the_flash.to('Topic successfully created') }
+      it { should redirect_to topics_url }
+    end
+  end 
 
 end
