@@ -3,11 +3,15 @@ Rails.application.routes.draw do
   root 'topics#index'
 
   devise_for :users
+
+
+  get '/topics/:id', to: 'topics#show'
+
   resource :topics do
     resource :posts
   end
 
-  resource :posts
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
