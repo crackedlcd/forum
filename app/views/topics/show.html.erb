@@ -1,1 +1,9 @@
-This is show.
+<% for post in @topic.posts %>
+
+<table class="table table-bordered">
+	<tr>
+		<td><%= User.find(post.user_id).username %></td>
+		<td><%= post.content %></td>
+	</tr>
+</table>
+<% end %>

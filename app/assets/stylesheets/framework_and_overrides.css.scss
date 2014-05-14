@@ -86,3 +86,26 @@ section {
   @extend .btn-primary;
   @extend .btn-xs;
 }
+
+.post {
+  width: 100%;
+  display:table;
+
+  span {
+    padding:5px;
+    border:3px solid #eee;
+    margin:0;
+    
+    .left {
+      width:150px;
+      background: #eee;
+      border: 3px solid #eee;
+      display:table-cell;
+    }
+
+    .right {
+      border: 3px solid #eee;
+      display: table-cell;
+    }
+  }
+}

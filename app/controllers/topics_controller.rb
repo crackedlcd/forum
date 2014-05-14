@@ -15,6 +15,7 @@ class TopicsController < ApplicationController
   # GET /topic/:id
   def show
     @topic = Topic.find(params[:id])
+    @post = @topic.posts
   end
 
   # POST /topics
